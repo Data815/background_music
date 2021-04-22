@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.20)  22 APR 2021 15:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.20)  22 APR 2021 18:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1120,26 +1120,26 @@ Overfull \hbox (123.49498pt too wide) in paragraph at lines 365--365
                        *p<0.05; **p<0.01; ***p<0.001[] 
  []
 
-[14] [15]
-File: /Users/trista/Desktop/Music_effect/Output/images/test1.png Graphic file (
-type bmp)
-</Users/trista/Desktop/Music_effect/Output/images/test1.png>
-File: /Users/trista/Desktop/Music_effect/Output/images/test2.png Graphic file (
-type bmp)
-</Users/trista/Desktop/Music_effect/Output/images/test2.png>
-[16]
-File: /Users/trista/Desktop/Music_effect/Output/survey/survey.png Graphic file 
-(type bmp)
-</Users/trista/Desktop/Music_effect/Output/survey/survey.png>
-[17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 491--493
+[14] [15] [16]
+File: /Users/trista/Desktop/background_music/Output/images/test1.png Graphic fi
+le (type bmp)
+</Users/trista/Desktop/background_music/Output/images/test1.png>
+File: /Users/trista/Desktop/background_music/Output/images/test2.png Graphic fi
+le (type bmp)
+</Users/trista/Desktop/background_music/Output/images/test2.png>
+[17]
+File: /Users/trista/Desktop/background_music/Output/survey/survey.png Graphic f
+ile (type bmp)
+</Users/trista/Desktop/background_music/Output/survey/survey.png>
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 517--519
 [][][][][][][][][][] [] [][][][][][] [][] [][][][][][][][][][][] [][] [][][][][
 ][][][][] [] [] [] [][][] [] [][][][] [] [][][] [] [][][][][][][][] [] [][][][]
 [][][][][][][][][] [] [][][][][][][][][][][] [] [][][][][][] [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 523--525
 []$[][][][][] [] [] [] [][][][] [] [][][][][][][] [] [][][] [] [][] [] [][][][]
 [][][][][][] [][] [][] [][] [][][][][][][][][][] [][] [] [] [][][][][][][][][][
 ] [][] [][][][][][][][] [][] [][][] [][] [][] [][] [] [][] [][][][][][][][][] [
@@ -1147,26 +1147,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 497--499
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--508
+Underfull \hbox (badness 10000) in paragraph at lines 532--534
 [][][][][][][][] [] [][][] [] [][][][][][][][][][] [] [][][] [][] [][][][] [][]
  [][][] [][] [][][][][][] [][] [][][][][][] [][] [][][] [][] [][][][][][][][][]
  [] [][][][][] [] [] [] [][][][] [] [][] [] [][][][][][][][][][][] []
  []
 
-[19] [20] (./paper.aux)
+[20] [21] (./paper.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 536532918F368F6472991F694D664742;3441.
+(rerunfilecheck)             Checksum: AA52DB2DF845EDA77B2248D933888B18;3535.
  ) 
 Here is how much of TeX's memory you used:
- 17728 strings out of 478918
- 312434 string characters out of 5865691
- 806320 words of memory out of 5000000
- 37277 multiletter control sequences out of 15000+600000
+ 17736 strings out of 478918
+ 312843 string characters out of 5865691
+ 806883 words of memory out of 5000000
+ 37285 multiletter control sequences out of 15000+600000
  410956 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,9n,122p,1521b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on paper.pdf (20 pages).
+Output written on paper.pdf (21 pages).

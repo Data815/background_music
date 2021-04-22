@@ -337,16 +337,33 @@ tibble(
 
 # Discussion
 ## Bias and ethical concerns
-. no ethical concerns
-. learning effect
-. hawthorn effect
-. 
+### Ethics Statement
+The experiment conducted in this paper is about learning whether background music will influence students' attention level. The intervention in the study is background music. There is no potential to harm or endanger any participant. Moreover, the designer did not collect any sensitive data. Therefore, no formal ethics approval is required.
 
-## What is done in this this paper?
-. Descriptive analysis:
-  1) similar number of students for each gender; students finshed the test with background music in a longer time and the learning effect exist.
-  2)male easily be impacted by music than other genders
-  3)favouriblity of the background would influence the time
+### Practice Effect
+Each participant is measured for two conditions in the within-subject design(repeated measure design). Participants learn about the type and difficulty of the question when they take the Trail Making Test for the first time, so they may become more adept simply with the question and more proficient because of the repeated test, making the second-round test result more optimistic. In addition to the students' understanding of the test questions, some participants may feel bored or have a negative attitude to repeat the same test, making the results inaccurate.
+
+### Hawthorn Effect
+During the experiment, participants know that they are part of the experiment and observed. Their speed of doing the tests and the performance will be recorded, leading to the Hawthorne effect. Hawthorne effect stands for the tendency of some people to perform better when they know they are the participants in an experiment. The existence of the Hawthorne effect may cause students to change their behavior, such as trying to complete the test as soon as possible to achieve better performance, precisely because they know they are receiving research attention. Then, the results may be biased and inaccurate.
+
+## Descriptive Analysis Results
+
+### Different order will lead to different results
+The data is divided into two main parts according to whether there are interference items. Then, add subgroup according to order in each group.  A part of the students is randomly selected to complete the test with background music and then complete the test without background music. The other students oppositely first completed the test without background music and then completed the test with background music. The results showed that, overall, students generally took longer to complete the test with background music. The result of order illustrates that whether it is background music or not, the completion time of the second round is less than the completion time of the first round. Therefore, it can be predicted that the order will affect the student's completion time.
+
+
+### Male are more susceptible to music interference
+When comparing the average time to complete the test with and without background music for different genders, the results show that the change in female and transexual people is not obvious. After adding interference factors, the average time to complete the test increases by one second. However, the average time for males to complete the test was 45 seconds before adding the interference factor. After the interference factor was added, the average time to complete the test was 50 seconds. The background music increased the completion time for the male by 5 seconds. Therefore, in all the participants in this experiment, males are more likely to be disturbed by background music, which affects their attention level.
+
+### The enjoyment of music will affect the completion time of the test
+After completing two rounds of testing, participants were asked to rate the background music, 1 to 5 anonymously. The higher the score, represents the more they liked the song. From the results, when the participants give a score greater than or equal to 3, the average time to complete the test is less than the overall average completion time. This shows that when people hear the background music they don’t like, their attention level is much lower than those who listen to background music they like.
+
+## Model Results
+
+### Each student’s initial attention level is different
+
+  
+  
   
 . Statistical Analysis:
   1) random intercept and random slop occurs
