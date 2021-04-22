@@ -1,0 +1,410 @@
+---
+title: "Background Music Will not Distract Students' Attention"
+author: "Hong Pan"
+date: "`r format(Sys.time(), '%B %d %Y')`"
+output:
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    toc: yes
+
+
+abstract: "Music has gradually become an essential part of our lives, and it has become a common trend for most students to choose to listen to music while studying. This paper examines whether the background music affects students' attention level by conducting a within-subjects experiment to compare the time of finishing the Trail Making Test with and without music. From the liner mixed mode, the result shows that background music does not significantly impact attention level. Apart from that, male students tend to be more easily distracted by the background music. \\par
+ \\textbf{Keywords:} background music, attention, trail making test, executive functioning skills"
+
+
+header-includes:
+ - \usepackage{float}
+ - \floatplacement{figure}{H}
+ - \floatplacement{table}{H}
+
+
+
+thanks: "Code and data are available at: https://github.com/HongTrista/Music_effect"
+
+always_allow_html: yes
+
+bibliography: references.bib
+
+---
+
+
+
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(plyr)
+library(tidyverse)
+library(here)
+library(ggplot2)
+library(lme4)
+library(kableExtra)
+library(performance)
+library(stargazer)
+library(lattice)
+library(MuMIn)
+```
+
+
+```{r import, include=FALSE}
+#import dataset
+dataset<-readr::read_csv(here::here("Input/music_dataset.csv"))
+dataset$Id<-as.factor(dataset$Id)
+dataset$order<-as.factor(dataset$order)
+
+```
+
+
+# Introduction
+
+Should students listen to music while studying? In contemporary times, music has become an indispensable part of human life.  With the development of technology, students can more easily and conveniently access music through various devices and channels. According to Nielsen's report, teens use an average of 3.8 devices in a week to engage with music, such as smartphones, laptops, and tablets, and on average, teens spend over 32 hours per week listening to music[@Nielsen]. Meanwhile, the survey took by Jackson Gutknecht illustrates that around 75 of 80 students said they listen to music while studying[@Jackson]. Listening to music during the learning process has become a common trend for many students, therefore, it is important to understand the influence of background music on students’ attention level.
+
+Trail Making Test, which is used to measure executive functioning skills, was utilized to study whether background music would influence students’ attention level. Executive functions refer to the mental processes needed when people have to concentrate or pay attention, which is "a specific set of attention-regulation skills involved in conscious goal-directed problem-solving.[@executive]” Defectiveness of executive functioning skills will make students have a hard time paying attention[@Understood]. In the Trail Making Test, each round consists of several dots numbered from 1 to 12 and lettered A to J, randomly distributed on a page. The participants are required to connect the circles as soon as possible.^[The order should alternate between numbers and letters, i.e. 1, A, 2, B,...] 
+
+The within-subjects experiment is conducted by randomly selected students from one specific school, and each participant needs to complete two rounds of tests, with and without music.  The dataset created by Arriken Worsley[@dataset] records the time of accomplishing the test, gender of the student, music favourability, and the order of test which is starting with the music or without the music. The descriptive analysis results show that students performed better without music. In addition, whatever the order of the test, the second round will be faster on average. Furthermore, background music has the biggest influence on male's executive functioning skills. Because the dataset is longitudinal, the linear mixed model is applied to do the statistical analysis. The result from the model illustrates that the students’ attention level is not significantly impacted by listening to the music. In this study, the practice effect^[People improve their scores simply by taking the same test multiple times. (Kendra Cherry,2019)]  may exist since the students need to do the test twice continuously. 
+
+The rest of this article is structured as follows. In the data section, the study design, including the experiment process, sampling method, and the dataset variables, will be explained. In the model section, the model selection will be discussed, which aims to investigate how background music impacts students’ attention level. In the result section, the descriptive and statistical analysis detail will be presented. Finally, in the discussion section, the main findings, limitations and direction of future research will be discussed. In the Appendix, the screenshot for the survey and the real Trail Making Test used for the experiment will be shown. 
+
+
+# Data
+The data used to investigate whether background music will effect students' attention level. The data analyzed through R Statistical Programming Language[@citeR]. The Tidyverse package[@cite_tidyverse] used for data processing, kableExtra package[@cite_kableExtra] is applied to generate tables, ggplot2[@cite_ggplot2] is used to draw diagrams, here[@cite_here] used for import dataset and nlme[@cite_nlme] utilized to create model. The performance pacakge[@cite_performance] and lattice package[@cite_lattice] are used to draw diagram help to check the model assumptions. The package stargazer[@cite_stargazer] is used to visualize the table.
+
+## Participants
+The experiment was conducted in a high school in 2020, and the sample of the study was comprised of 47 students between 13 and 17 years old randomly chosen from the school. Both male and female students participated in the research on whether background music affects people's attention. The pie chart shown in Figure \@ref(fig:gender) illustrates that 51% are female, 47% are male, and the rest 2% are transexual.
+
+## Experiment 
+
+### Intervention
+The purpose of the experiment is to examine the background music effects on students' attention level. The experimental design plan randomly selects some students from a school, completes the Trail Making Test with and without background music, and records the completion time. In this experiment, the intervention is the existence of background music. This experiment wants to determine whether the background music will affect the concentration level of students by studying whether the time for students to complete the test with background music is longer than the time for completing the test without background music. If the result is yes, it means that music will affect the student's attention to a certain extent; otherwise, it will not. The experiment can help the target audience have some basic understanding of whether music has an impact on attention and can make the right decision whether to listen to music in future studies or work to avoid inefficiency.
+
+### Procedure
+As the paper aims to understand whether background music would affect students' attention level, all students in the world would be considered as the target population. The frame population is all students from the school. 47 students being randomly selected from the school as a sampled population to finish the experiment. The detailed procedure will be explained as followed.
+
+The 47 students chosen randomly from the school will be randomly separated into two groups to start the Trail Making Test in a different order. 27 students started the experiment in a quiet environment, and the remaining 20 students started with background music. The Trail Making Test utilized during the experiment are shown in figure 2 and 3 in the appendix. Each test contains 23 randomly distributed dots, including 12 numeric points from 1 to 12 and 11 letter points from A to K. Participants must start connecting from 1 and connect these points to the final point in alternating ascending order, such as 1, A, 2, B, 2, C, etc. During the process, the line should not cross over, making a "trail". The background music, the intervention,  while playing during the experiment will be the song Panda by Desiigener because, during the experiment period, it was at the top of the billboard and was the most popular music. 
+
+The experiment is conducted by students in the form of a class. Students selected to the same group will start the test uniformly, and a timer is placed in front of each student to record the completion time. In order to counteract the learning effect gained from the first test to the second one to some extent, changing the order of starting the experiment was applied. The students in the first group will start the Trail Making Test without background music, then will do another test while playing the background music, Panda. The second group of students will start to do the test with background music and do the second test in silence for control. After each round, the time for accomplishing the test will be recorded by seconds. Meanwhile, when participants finish all the two tests, they will be required to fill in an anonymous survey shown in the appendix that will ask for feedback, gender, and personal enjoyment of the song played, on a scale from one to five. 
+
+
+## Mearues
+The paper intends to use the dataset collected from the experiment set up by Arriken Worsley[@dataset] to analyze whether the background music will influence students' attention level. The dataset records 94 observations with 13 variables. The data set contains some empty columns and variables that are not related to the research topic^[The variables are "question" (the experimenter's comment) as well as "Diff-AVG" and "DIF_AVG". The raw datasets before cleaning could be found in the Input folder, music_first.csv and no_music_first.csv.]; therefore, only 8 variables and 94 observations are left after changing the dataset into a longitudinal. 
+
+The **Id** represents a student, and a number represents a student. **Test_Type** illustrates whether the students finished the test with background music or without, the control group or the treatment group. **Time_Sec** shows how many seconds does the student to accomplish the Trail Making Test. The column, **Gender**, shows the gender of the student. **Rating** indicates the student's preference for background music. After completing the experiment, students need to fill out a questionnaire anonymously, including rating background music from 1 to 5. The higher the score, the more they like the background music. The `Feedback` column shows the students' feelings and evaluations of the entire experiment. **Change** shows test 2 compares with test 1, by what percentage increase or decrease the time. **Order** records the order of the test, which helps to illustrate whether the test is the first or second round.
+
+
+## Descriptvie Analysis
+### Gender distribution
+```{r gender,fig.cap = "Gender ratio chart",echo=FALSE}
+gender_ratio<-data.frame(table(dataset$Gender))
+
+pct <- round(gender_ratio$Freq/sum(gender_ratio$Freq)*100)
+lbls <- paste(gender_ratio$Var1, pct) # add percents to labels
+lbls <- paste(lbls,"%",sep="") # ad % to labels
+pie(gender_ratio$Freq,labels = lbls, col=c('#1B9E77',"#D95F02","#7570B3"),
+   main="Pie Chart of Gender")
+```
+
+According to the experiment, students are randomly selected from the school. Students need to fill out a questionnaire after completing two "Trail Making Test" to inform the experiment initiator of their gender and other information. The pie chart(Figure \@ref(fig:gender)) shows that among the students selected for the experiment, the proportions of men and women are almost the same, which leads to the conclusion that the distribution of men and women is almost the same. Female accounted for 51% of the total number, male accounted for 47% of the total number, and the rest were transexual.
+
+
+### Mean time by test type
+```{r table1,fig.cap='Average time to complete a test with and without background music', echo=FALSE}
+
+library(plyr)
+ddply(dataset, .(Test_Type), summarize,  "Average Time to Complete a Test"=round(mean(Time_Sec),2),'Standard Deviation'=round(sd(Time_Sec),2))%>%
+  kbl(caption = 'Average time to complete a test with and without background music',
+      align = "cccc") %>%
+  kable_styling(latex_options = "hold_position")
+
+```
+
+Table \@ref(tab:table1) shows the average time to complete a Trail Making Test with or without background music. The results in Table \@ref(tab:table1) show that, compared with no music, it takes longer for students to complete the test with background music. The average time to complete a test with background music is 47.19 seconds(SD= 13.53), while the average time to complete a test in silence is 44.26 seconds(SD= 13.30), which is approximate 3 seconds faster than with background music.
+
+### Average time of completing a test by type and order
+
+```{r order, fig.cap="Average time of completing a test by type and order",echo=FALSE,warning=FALSE,message=FALSE}
+#remove package plyr for using group_by function
+detach(package:plyr)
+dataset %>% 
+  group_by(order, Test_Type) %>% summarize("Average Time to Complete a Test" = round(mean(Time_Sec),2),'Standard Deviation'=round(sd(Time_Sec),2))%>%
+kbl(caption = 'Average time of completing a test by type and order',
+      align = "cccc") %>%
+  kable_styling(latex_options = "hold_position")
+
+```
+
+Since the experiment is a within-subject experimental design, each student is both in a control group and a treatment group. In order to study whether the practice effect exists, Table \@ref(tab:order) shows that in addition to studying the average time for students to complete the test in each experiment condition, the factor of the order of completing the test is also added.  Overall, whether the students completed the first round of the test with background music or first completed the test in a quiet environment, the average completion time of the second round was shorter than that of the first round. The Table \@ref(tab:order) shows that when students' first round is added intervention, the average time to complete the test is around 52.56 seconds(SD= 12.14). The second round, which is without background music, takes around 40.56 seconds(SD= 15.52) to accomplish the test. For the students who finish the test without background music in the first round, the average time to complete the test is 49.52 seconds(SD= 12.06). When added intervention, the background music, to the second round, the average time for them to complete the test not only did not increase, but it decreased by one second, about 39.95 seconds(SD= 10.18).
+
+
+### Average time for different genders to complete the test by test type
+```{r gendertime, fig.cap="Average time for different genders to complete the test by test type",echo=FALSE,warning=FALSE,message=FALSE}
+d1 <- dataset %>% 
+        group_by(Gender,Test_Type) %>% 
+        summarise(mean_time = mean(Time_Sec))
+
+ggplot(d1, aes(x =Gender , y = mean_time,fill=Gender)) +
+  geom_bar(stat = "identity",width = 0.8)+
+  facet_wrap(~Test_Type)+
+  ylab("Mean time")+
+  ggtitle("Average time to complete the test by gender and test type")+
+  theme_minimal()+
+  theme(plot.title = element_text(size=13))
+
+```
+
+The paper[@female] illustrates females are good at concentration and not easily being distracted compared with males. In order to study whether background music will affect students’ attention levels differently due to different genders, Figure \@ref(fig:gendertime) is drawn. Overall, the conclusion from the graph goes along with the conclusion the Bruce Goldman[@female] made, which is females are less affected by the intervention, while males' attention levels are easily affected. Background music increased the average time for female and transexual students to complete the test by about one second. In contrast, background music influences male students' average time to complete the test increased by 5 seconds. And whether with or without background music, the average completion time for men is the longest, while the average time for transexuals is the shortest.
+
+### Music favorability and average time to complete the test
+
+```{r linechart, fig.cap="Music favorability and average time to complete the test",echo=FALSE,warning=FALSE}
+d2 <- dataset %>% 
+        group_by(Rating)%>% 
+        summarise(mean_time = mean(Time_Sec))
+
+overall_mean_time<-mean(dataset$Time_Sec)
+
+ggplot(d2,aes(x=Rating,y=mean_time))+
+  geom_line(color='blue')+
+  scale_x_continuous(breaks = seq(1,5,0.5),limits = c(1,5))+
+  scale_y_continuous(breaks = seq(0,50,5),limits = c(0,50))+
+  geom_hline(yintercept = overall_mean_time,
+             color = "darkred",
+             linetype = "dashed")+
+  geom_text(aes(Rating[1], overall_mean_time , label = "Mean"), vjust= 2)+
+  ggtitle("Favorability of music and average time to complete the test")
+
+```
+The line chart shown in Figure \@ref(fig:linechart) is used to visualize the relationship between the degree of enjoyment of music from students and their attention levels. The blue line indicates the average time to complete the test at each rating level, and the brown dash line represents the total average time for accomplishing the test. As we can see from the chart, when the rating is approximately less than 3, the average time for students to complete the test is all greater than the overall average. When the rating is greater than 3, the average time for all students is significantly less than the overall average except for level 4.0. According to the findings in Figure \@ref(fig:linechart), when students listen to songs they don’t like while studying or doing other things that require concentration, their attention level is easily affected.
+
+
+
+
+# Model
+
+The dataset collected from the within-subject experimental design mentioned in the paper is longitudinal data, which means one participant provides multiple data points^[In the experiment, each student made the Trail Making test twice, one with background music, the other one without background music.]. These data will be related to each other because they are from the same participant. In this case, the basic linear regression model cannot be applied as it assumes that data points are independent of one another. Therefore, a linear mixed model provides an elegant model to handle the correlated observations within a group and suitable for the study with multiple trials per participant. 
+
+The analysis in this paper will be done entirely through R[@citeR]. From Figure \@ref(fig:randomeffect) below, each line is for 2 Trail Making Test performed by each student and shows the measured completion time of each student who performed the test under different order conditions. As clearly illustrated,  whether there is background music or no background music first, different individuals will have different levels of initial attention level, which suggests the existence of the random effects, specifically random intercepts. In addition, the slope for each line is different, which imply that random slope also exist. So, the linear mixed model is applicable. It quantified how background music played in the background could impact the students' attention level compared to the quiet background. 
+
+```{r randomeffect,fig.cap="Finishing Time by Order with Different Starting Condition, for Each Student",echo=FALSE,warning=FALSE}
+dataset%>%
+  ggplot(aes(x=order,y=Time_Sec,group=Id,colour=Test_Type))+
+  theme_classic()+
+  geom_line(alpha=0.8)+
+  labs(title="Finishing Time by Order with Different Starting Condition, for Each Student",
+       subtitle="Time Data",
+       x="Order",
+       y="Time_Sec")+
+  guides(color=guide_legend("Starting condition"))
+```
+
+## Linear Mixed Model
+$$
+\hat Y_{Time\space Sec}=\hat\beta_0+\hat\beta_1*I_{No\ Music_{ij}}+\sum_{a=Male}^{Transexual}\hat\beta_2* Gender_{aij}+\hat\beta_3*I_{order=2ij}+\hat\beta_4*Rating_{ij}+\alpha_{ij}+\epsilon_{ij}
+$$
+**Time** is the time of the i-th students at the j round to complete the Trail Making Test. **The beta** shown in the formula are the overall fixed intercept and fixed-effect coefficients. **The alpha** is a vector of the random effect for group identity, which includes random intercept and random slope effect for the i-th student. **Epsilon** is the random error for the observation j in group i. **The variables** are the fixed-effect regressors for observation j in group i.
+
+According to the dataset, the response variable and the explanatory variable, Rating, are continuous variables in the model. The reason is that they all can take any value between their minimum value and their maximum value[@continuous]. The other variables, type of test, gender and order, are all categorical variables because all of the data within the variables can be stored into groups or categories with names or labels[@categorical].
+
+## Modeling Procedure
+A linear mixed model consisted of two-part, fixed effect and random effect. The modeling procedure will start to specify the random effects term that best fits the data in the null model, then building up hierarchically. ANOVA, p-value, AIC and RMSE help to find the best-fitted model for the data and check the model validation.
+
+### Random Effects
+Three null models with different random effects terms will be set up, and the ANOVA function will be applied to compare the models to find the best fitting random effects structure by comparing their p-value to see whether fit has improved with additional items. 
+
+The three different random effects term are as followed:
+*(1| Id): Random intercepts and slopes for each Id.
+*(1 + Test_Type |Id) = The effect of the background music will vary between each student Id. Random intercepts for test type, random slopes for students influenced by test type.
+* (1 + Test_Type * order | Id) = Each student Id can have their intercept, random slopes influenced by Test Type and order, and their interaction between Test Type and order.
+
+
+### Fixed Effects
+After finding the best-fitting random effect term, ANOVA will be applied to select the significant variables and compare different models. The model for the study starts with only focused variable, test type. Then, other variables will be included in the model one at a time. From the ANOVA output, if the p-value were smaller than 0.1, the variable would be added to the final model. In the process of determining the best model, ANOVA will be applied and the smaller AIC^[AIC(Akaike information criterion) is a mathematical method for evaluating how well a model fits the data it was generated from. AIC is used to compare different possible models and determine which one is the best fit for the data[@AIC.] suggests the better model.
+
+## Model Diagnostics
+Before conducting the linear mixed model, the following assumptions need to be checked: whether the variance of the residuals is equal across groups, whether the residuals of the model are normally distributed, and whether there does not exist multicollinearity.
+
+Figure \@ref(fig:a1) helps to check the assumption of the variance of the residuals is equal across groups. From the chart, there seems to be an evenly spread around the central line and no patterns evident, which means the assumption of homogeneity of variance being satisfied.
+
+```{r a1, fig.cap="The variance of the residuals is equal across groups",echo=FALSE,warning=FALSE,message=FALSE}
+model<-lmer(Time_Sec~ 1+Test_Type+order+Rating+Gender+(1|Id),data=dataset,REML=FALSE)
+
+
+# homogeneity of variance
+
+plot(model)# looks alright, no patterns evident
+```
+
+QQ plots(Figure \@ref(fig:a2)) can provide an estimation of where the standardized residuals lie with respect to normal quantiles. Strong deviation from the provided line indicates that the residuals themselves are not normally distributed. From Figure \@ref(fig:a2), there is some deviation from eh expected normal line towards the two-side tails, but overall all the line looks straight and therefore pretty normal and suggests that the assumption is not violated.
+
+```{r a2, fig.cap="The residuals of the model are normally distributed",echo=FALSE,warning=FALSE,message=FALSE}
+library(lattice)
+qqmath(model)
+```
+
+Variance inflation factor (VIF) is a measure of the amount of multicollinearity, which means one predictor variable can be linearly predicted from the others with a substantial degree of accuracy[@multicollinearity]. The bar chart in Figure \@ref(fig:a3) illustrates that all the independent variables in the model have a VIF value less than 2.5, which means there are low, and even no multicollinearity exists.
+```{r a3, fig.cap="multicollinearity",echo=FALSE,warning=FALSE,message=FALSE}
+library(performance)
+
+plot(check_collinearity(model))
+
+```
+
+# Results
+The purpose of the study was to explore whether background music has a distracting effect on students' attention levels. There were a total of 47 students participated in the study. A linear mixed model was used to analyze the results for the research question for the within-subject design. An alpha level of 0.1 was used for the analysis. 
+
+## Random Effect Result
+
+The output table(Table \@ref(tab:r1)) using ANOVA to compare null models with different random effect terms shows that nullmodel1 is the best because the p-value for comparing nullmodel1 and nullmodel2 is larger than 0.1. There is no improvement from nullmodel2 to nullmodel3 due to a high p-value,0.994. As a result, the best random effect term is (1|Id).
+
+```{r r1, fig.cap="The result of comparing model by ANOVA",echo=FALSE,warning=FALSE,message=FALSE,comment=NA}
+
+nullmodel1<-lmer(Time_Sec~1+(1|Id),data=dataset,REML=FALSE)
+
+nullmodel2<-lmer(Time_Sec~ 1+(order|Id),data=dataset,REML = FALSE, control=lmerControl(check.nobs.vs.nRE="ignore"))
+
+nullmodel3<-lmer(Time_Sec~ 1+(1+Test_Type*order|Id),data = dataset,REML = FALSE, control=lmerControl(check.nobs.vs.nRE="ignore"))
+
+anova (nullmodel1, nullmodel2, nullmodel3)%>%
+   kbl(caption = 'The result of comparing model by ANOVA',
+      align = "cccc") %>%
+  kable_styling(latex_options = "hold_position")
+
+```
+
+## Full Model Result
+After finding the best-fit random effect term, the predictor variables will be added to the model one by one. Model 1 in the table only includes the most important variable, Test_Type. The result in the table(Table \@ref(tab:r2)) shows that the coefficient of Test_Type is -2.936 with a 90% confidence level is -8.064 to 2.192,  which illustrates that the average time for completing the Trail Making Test with or without background music is not significantly different between groups. Then, the variable order was added to model 2. The result from the Table \@ref(tab:r2) shows that the coefficient for the variable order is -10.65 and the 90% confidence interval is  -14.848 to -6.452, which does not cover value 0, suggesting that the average time to complete the test in order 2 is 10.65 seconds faster than the order 1, holding other variables constant. Meanwhile, for model 3, the interaction between test type and order being considered for testing whether the effect of the order variable depending on the level of test type. The output from model 3 shows that the interaction term is not significant, p-value larger than 0.1 and the 90% confidence interval cover value 0. Furthermore, variable Rating was added to model 4 and showed not significantly related to completing the test. Finally, the same logic applied to model 5, which plus variable Gender and illustrate that the different Gender would not be a factor to influence student's time of accomplishing the test.
+
+In order to find out the best-fit model for the data, ANOVA and AIC were applied to compare models. In Table \@ref(tab:r2), there is an AIC value in each model. The smaller the AIC value, the better the model. From Model 1 to Model 5, their AIC values are 760.54, 742.68, 744.21, 746.02, and 747.68 respectively. Among them, the AIC value of Model 2 is the smallest. Therefore, it is deduced that Model 2 should be the best model among the five models.To further prove that model two is the best model among the five, ANOVA is used to compare the five models. In Table \@ref(tab:r3), analyze which model is the best by looking at the p-value. When comparing model 1 and model 2, the p-value is much smaller than 0.01, which shows that model two is significantly better than model one, so model two is the best at this time. When comparing model two and model three, the p-value is 0.497, which is greater than 0.1, so adding predictor variables does not increase the fittness of the model. The same logic applies to the comparison between Model 3 and Model 4 and Model 4 and Model 5. In conclusion, through ANOVA's analysis, the conclusion is that Model 2 is still the best.
+
+
+```{r r2, fig.cap="Model comparison results",echo=FALSE,warning=FALSE,message=FALSE,comment=NA}
+library(stargazer)
+m1<-lmer(Time_Sec~ 1+Test_Type+(1|Id),data=dataset,REML=FALSE)
+
+m2<-lmer(Time_Sec~ 1+Test_Type+order+(1|Id),data=dataset,REML=FALSE)
+
+
+m3<-lmer(Time_Sec~ 1+Test_Type+order+Test_Type*order+(1|Id),data=dataset,REML=FALSE)
+
+m4<-lmer(Time_Sec~ 1+Test_Type+order+Test_Type*order+Rating+(1|Id),data=dataset,REML=FALSE)
+
+
+m5<-lmer(Time_Sec~ 1+Test_Type+order++Test_Type*order+Rating+Gender+(1|Id),data=dataset,REML=FALSE)
+
+
+
+stargazer(m1,m2,m3,m4,m5, type = "text",
+          title = "Linear Mixed Model Result",
+          digits = 3,
+          star.cutoffs = c(0.05, 0.01, 0.001),
+          digit.separator = "",
+           align=TRUE,
+           ci=TRUE)
+
+```
+
+```{r r3, fig.cap="Comparing Model by ANOVA",echo=FALSE,warning=FALSE,message=FALSE,comment=NA}
+anova(m1,m2,m3,m4,m5)%>%
+  kbl(caption = 'To Find Out the Best Final Model by ANOVA',
+      align = "cccc") %>%
+  kable_styling(latex_options = "hold_position")
+```
+
+
+## Model Assessment Result
+Root Mean Square Error(RMSE) is used to evaluate the quality of the model. RMSE stands for the standard deviation of the residuals and it helps to tell how concentrated the data is around the line of best fit[@RMSE]. In Table \@ref(tab:r4), the RMSE value of the final model, model 2, is 0.135 which a good sign for the model and illustrates that the model have good ability to accurately predict the data. The R-square is applied to assess the model as well. R-square is a statistical measure of how close the data are to the fitted regression line[@R-square]. For the linear mixed model, R-square consisted two types, which are marginal R-square and conditional R-square. The paper will mainly focused on marginal R-square values, which provides the variance explained by only fixed effect. The marginal R-square for the final model, model 2, shown in Table \@ref(tab:r4) is 0.169, which means 16.9% of the variation in the dependent variable can be explained by the final linear mixed model.
+```{r,include=FALSE}
+#RMSE:
+performance_rmse(m2,normalized = TRUE)
+
+#R square:
+library(MuMIn)
+ r.squaredGLMM(m2)
+```
+
+
+```{r r4, fig.cap="Model assessment result",echo=FALSE,warning=FALSE,message=FALSE,comment=NA}
+ 
+tibble(
+  'RMSE' = 0.134,
+  'Marginal R-square' = 0.169,
+  'Conditional R-square' = 0.410
+) %>%
+  kbl(caption = 'Assessment Result',
+      align = "cccc") %>%
+  kable_styling(latex_options = "hold_position")
+```
+
+
+# Discussion
+## Bias and ethical concerns
+. no ethical concerns
+. learning effect
+. hawthorn effect
+. 
+
+## What is done in this this paper?
+. Descriptive analysis:
+  1) similar number of students for each gender; students finshed the test with background music in a longer time and the learning effect exist.
+  2)male easily be impacted by music than other genders
+  3)favouriblity of the background would influence the time
+  
+. Statistical Analysis:
+  1) random intercept and random slop occurs
+  2) each students whatever which group they belong to have different attention level.
+  3) background music is not significantly impact studnets' attention level, but order did influnce the time of completing the test.
+
+
+## What is something that we learn about the world?
+. 
+
+
+## What are some weaknesses of what was done?
+. internal validity: justified by the procedures of sampling, randomization in the experiment intervention, controlling or confounders and having sufficient sample size in the model.
+  1) sampling: 
+  2) Randomization in intervention
+  3) Controlling for confounders
+  4) Sufficient sample size
+
+.External validity: cannot be representative
+
+## What is left to learn or how should we proceed in the future?
+. add more students to do the experiments
+. change the setting to different types of experiments with Stroop Test.
+
+\newpage
+# Appendix
+```{r test1, echo=FALSE, fig.align='center', fig.cap="First Trail Making Test", out.width = '80%'}
+knitr::include_graphics(here("Output/images/test1.png"))
+```
+
+```{r test2, echo=FALSE, fig.align='center', fig.cap="Second Trail Making Test", out.width = '80%'}
+knitr::include_graphics(here("Output/images/test2.png"))
+```
+
+
+```{r survey, echo=FALSE, fig.align='center', fig.cap="Short survey for rating", out.width = '80%'}
+knitr::include_graphics(here("Output/survey/survey.png"))
+```
+
+
+\newpage
+# References
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
