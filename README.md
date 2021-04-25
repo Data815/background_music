@@ -8,6 +8,6 @@ Music has gradually become an essential part of our lives, and it has become a c
 * Script: The folder contains R codes to import and clean data.
 * Input: The raw dataset and cleaned dataset are in the subfolder.
 * Output: The "paper" subfolder contains pdf, R code and reference list of the paper. The "images" subfolder contains screenshots for the two Trail Making Test utilized in the experiment. The "survey" folder contains the screenshot for the questionnaire.
-* Shinyapp: The "app. R" file contains the code for creating the interactive diagrams.
+* Shinyapp: The "app. R" file contains the code for creating the interactive diagrams. The Shinyapp link for the interactive graphs is https://hongtrista.shinyapps.io/Shinyapp/?_ga=2.86381278.759236858.1619203106-1272735195.1619203106 
 
 
