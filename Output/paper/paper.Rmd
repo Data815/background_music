@@ -280,7 +280,7 @@ nullmodel2<-lmer(Time_Sec~ 1+(order|Id),data=dataset,REML = FALSE, control=lmerC
 
 nullmodel3<-lmer(Time_Sec~ 1+(1+Test_Type*order|Id),data = dataset,REML = FALSE, control=lmerControl(check.nobs.vs.nRE="ignore"))
 
-anova (nullmodel1, nullmodel2, nullmodel3)%>%
+round(anova (nullmodel1, nullmodel2, nullmodel3),2)%>%
    kbl(caption = 'The result of comparing model by ANOVA',
       align = "cccc") %>%
   kable_styling(latex_options = "hold_position")
