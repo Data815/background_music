@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.20)  24 APR 2021 19:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.20)  24 APR 2021 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -611,214 +611,210 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 50.
 (/Users/trista/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-<paper_files/figure-latex/gender-1.pdf, id=179, 251.94125pt x 250.9375pt>
+) [4]
+<paper_files/figure-latex/gender-1.pdf, id=197, 251.94125pt x 250.9375pt>
 File: paper_files/figure-latex/gender-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/gender-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/gender-1.pdf  used on input l
 ine 162.
 (pdftex.def)             Requested size: 251.94063pt x 250.93687pt.
-[4]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `fig:gendertime' on page 5 undefined on input line 213
-.
-
-<paper_files/figure-latex/gendertime-1.pdf, id=195, 349.305pt x 313.17pt>
-File: paper_files/figure-latex/gendertime-1.pdf Graphic file (type pdf)
-<use paper_files/figure-latex/gendertime-1.pdf>
-Package pdftex.def Info: paper_files/figure-latex/gendertime-1.pdf  used on inp
-ut line 214.
-(pdftex.def)             Requested size: 349.31479pt x 313.17877pt.
 [5pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.215 
+l.190 
       pdfTeX warning (ext4): destination with the same identifier (name{table.1
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.215 
-       <./paper_files/figure-latex/gender-1.pdf>] [6pdfTeX warning (ext4): dest
-ination with the same identifier (name{table.2}) has been already used, duplica
-te ignored
+l.190 
+       <./paper_files/figure-latex/gender-1.pdf>]
+<paper_files/figure-latex/gendertime-1.pdf, id=221, 349.305pt x 313.17pt>
+File: paper_files/figure-latex/gendertime-1.pdf Graphic file (type pdf)
+<use paper_files/figure-latex/gendertime-1.pdf>
+Package pdftex.def Info: paper_files/figure-latex/gendertime-1.pdf  used on inp
+ut line 217.
+(pdftex.def)             Requested size: 349.31479pt x 313.17877pt.
+[6pdfTeX warning (ext4): destination with the same identifier (name{table.2}) h
+as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.220 
-       <./paper_files/figure-latex/gendertime-1.pdf>]
-<paper_files/figure-latex/hhhh-1.pdf, id=232, 459.7175pt x 315.1775pt>
+      ]
+<paper_files/figure-latex/hhhh-1.pdf, id=233, 459.7175pt x 315.1775pt>
 File: paper_files/figure-latex/hhhh-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/hhhh-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/hhhh-1.pdf  used on input lin
-e 223.
+e 228.
 (pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
-<paper_files/figure-latex/randomeffect-1.pdf, id=236, 458.71375pt x 313.17pt>
-File: paper_files/figure-latex/randomeffect-1.pdf Graphic file (type pdf)
-<use paper_files/figure-latex/randomeffect-1.pdf>
-Package pdftex.def Info: paper_files/figure-latex/randomeffect-1.pdf  used on i
-nput line 236.
-(pdftex.def)             Requested size: 458.72662pt x 313.17877pt.
 [7pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.238 \end{figure}
-                   <./paper_files/figure-latex/hhhh-1.pdf>] [8pdfTeX warning (e
-xt4): destination with the same identifier (name{figure.3}) has been already us
-ed, duplicate ignored
+l.231 
+       <./paper_files/figure-latex/gendertime-1.pdf>]
+<paper_files/figure-latex/randomeffect-1.pdf, id=252, 458.71375pt x 313.17pt>
+File: paper_files/figure-latex/randomeffect-1.pdf Graphic file (type pdf)
+<use paper_files/figure-latex/randomeffect-1.pdf>
+Package pdftex.def Info: paper_files/figure-latex/randomeffect-1.pdf  used on i
+nput line 241.
+(pdftex.def)             Requested size: 458.72662pt x 313.17877pt.
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
+has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.254 
+l.244 
+       <./paper_files/figure-latex/hhhh-1.pdf>] [9pdfTeX warning (ext4): destin
+ation with the same identifier (name{figure.4}) has been already used, duplicat
+e ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.264 
        <./paper_files/figure-latex/randomeffect-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 265--267
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
 
  []
 
-<paper_files/figure-latex/a1-1.pdf, id=278, 338.26375pt x 179.67125pt>
+<paper_files/figure-latex/a1-1.pdf, id=294, 338.26375pt x 179.67125pt>
 File: paper_files/figure-latex/a1-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/a1-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/a1-1.pdf  used on input line 
-286.
+291.
 (pdftex.def)             Requested size: 338.27322pt x 179.67627pt.
-[9]
-<paper_files/figure-latex/a2-1.pdf, id=293, 265.99374pt x 252.945pt>
-File: paper_files/figure-latex/a2-1.pdf Graphic file (type pdf)
-<use paper_files/figure-latex/a2-1.pdf>
-Package pdftex.def Info: paper_files/figure-latex/a2-1.pdf  used on input line 
-294.
-(pdftex.def)             Requested size: 265.99713pt x 252.94823pt.
-<paper_files/figure-latex/a3-1.pdf, id=295, 418.56375pt x 207.77625pt>
-File: paper_files/figure-latex/a3-1.pdf Graphic file (type pdf)
-<use paper_files/figure-latex/a3-1.pdf>
-Package pdftex.def Info: paper_files/figure-latex/a3-1.pdf  used on input line 
-302.
-(pdftex.def)             Requested size: 418.56271pt x 207.77573pt.
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.305 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5}) has been already used, duplicate ignored
+l.296 
+       <./paper_files/figure-latex/a1-1.pdf>]
+<paper_files/figure-latex/a2-1.pdf, id=316, 265.99374pt x 252.945pt>
+File: paper_files/figure-latex/a2-1.pdf Graphic file (type pdf)
+<use paper_files/figure-latex/a2-1.pdf>
+Package pdftex.def Info: paper_files/figure-latex/a2-1.pdf  used on input line 
+299.
+(pdftex.def)             Requested size: 265.99713pt x 252.94823pt.
+<paper_files/figure-latex/a3-1.pdf, id=318, 418.56375pt x 207.77625pt>
+File: paper_files/figure-latex/a3-1.pdf Graphic file (type pdf)
+<use paper_files/figure-latex/a3-1.pdf>
+Package pdftex.def Info: paper_files/figure-latex/a3-1.pdf  used on input line 
+307.
+(pdftex.def)             Requested size: 418.56271pt x 207.77573pt.
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+ has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.305 
-       <./paper_files/figure-latex/a1-1.pdf> <./paper_files/figure-latex/a2-1.p
-df>] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.6}) has been already used, duplicate ignored
+l.310 
+       <./paper_files/figure-latex/a2-1.pdf>] [12pdfTeX warning (ext4): destina
+tion with the same identifier (name{figure.7}) has been already used, duplicate
+ ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.337 
+l.342 
       pdfTeX warning (ext4): destination with the same identifier (name{table.3
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.337 
+l.342 
        <./paper_files/figure-latex/a3-1.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12pdfTeX warning (ext4): destination with the same identifier (name{table.4}) 
+[13pdfTeX warning (ext4): destination with the same identifier (name{table.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.408 
-      ] [13pdfTeX warning (ext4): destination with the same identifier (name{ta
+l.413 
+      ] [14pdfTeX warning (ext4): destination with the same identifier (name{ta
 ble.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.442 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.6
-}) has been already used, duplicate ignored
+l.444 ...-more-susceptible-to-music-interference}}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{table.6}) has been already used, duplicate
+ ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.442 
-      ] [14] [15] [16]
-</Users/trista/Desktop/background_music/Output/images/test1.png, id=390, 731.16
+l.444 ...-more-susceptible-to-music-interference}}
+                                                  ] [15] [16] [17]
+</Users/trista/Desktop/background_music/Output/images/test1.png, id=406, 731.16
 591pt x 1035.73235pt>
 File: /Users/trista/Desktop/background_music/Output/images/test1.png Graphic fi
 le (type png)
 <use /Users/trista/Desktop/background_music/Output/images/test1.png>
 Package pdftex.def Info: /Users/trista/Desktop/background_music/Output/images/t
-est1.png  used on input line 513.
+est1.png  used on input line 518.
 (pdftex.def)             Requested size: 375.80157pt x 532.34135pt.
-</Users/trista/Desktop/background_music/Output/images/test2.png, id=392, 731.16
+</Users/trista/Desktop/background_music/Output/images/test2.png, id=408, 731.16
 591pt x 1035.73235pt>
 File: /Users/trista/Desktop/background_music/Output/images/test2.png Graphic fi
 le (type png)
 <use /Users/trista/Desktop/background_music/Output/images/test2.png>
 Package pdftex.def Info: /Users/trista/Desktop/background_music/Output/images/t
-est2.png  used on input line 525.
+est2.png  used on input line 530.
 (pdftex.def)             Requested size: 375.80157pt x 532.34135pt.
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.531 
+l.536 
        </Users/trista/Desktop/background_music/Output/images/test1.png>]
-</Users/trista/Desktop/background_music/Output/survey/survey.png, id=400, 638.3
+</Users/trista/Desktop/background_music/Output/survey/survey.png, id=416, 638.3
 85pt x 665.48625pt>
 File: /Users/trista/Desktop/background_music/Output/survey/survey.png Graphic f
 ile (type png)
 <use /Users/trista/Desktop/background_music/Output/survey/survey.png>
 Package pdftex.def Info: /Users/trista/Desktop/background_music/Output/survey/s
-urvey.png  used on input line 537.
+urvey.png  used on input line 542.
 (pdftex.def)             Requested size: 375.80615pt x 391.7602pt.
-[18pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.543 
-       </Users/trista/Desktop/background_music/Output/images/test2.png>] [19pdf
-TeX warning (ext4): destination with the same identifier (name{figure.9}) has b
-een already used, duplicate ignored
+l.548 
+       </Users/trista/Desktop/background_music/Output/images/test2.png>] [20pdf
+TeX warning (ext4): destination with the same identifier (name{figure.10}) has 
+been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.544 \newpage
-               </Users/trista/Desktop/background_music/Output/survey/survey.png
->]
-Underfull \hbox (badness 10000) in paragraph at lines 557--559
+l.580 \end{verbatim}
+                     </Users/trista/Desktop/background_music/Output/survey/surv
+ey.png>] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 595--597
 \T1/lmr/m/n/10 statistics / akaike -[] information -[] criterion / # : %7E : te
 xt = The % 20Akaike % 20information % 20criterion % 20(AIC ,[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--565
+Underfull \hbox (badness 10000) in paragraph at lines 601--603
 []$\T1/lmr/m/n/10 https : / / blog . minitab . com / en / adventures -[] in -[]
  statistics -[] 2 / regression -[] analysis -[] how -[] do -[] i -[] interpret 
 -[] r -[] squared -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--577
+Underfull \hbox (badness 10000) in paragraph at lines 616--618
 \T1/lmr/m/n/10 org / articles / 10 . 3389 / fpsyg . 2017 . 00557 / full# : ~ : 
 text = The % 20Stroop % 20Color % 20and % 20Word % 20Test %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--580
+Underfull \hbox (badness 10000) in paragraph at lines 619--621
 \T1/lmr/m/n/10 stanford . edu / 2017spring / how -[] mens -[] and -[] womens -[
 ] brains -[] are -[] di^^[erent . html# : ~ : text = In % 20adulthood % 2C %
  []
 
-[20] [21] (./paper.aux)
-
-LaTeX Warning: There were undefined references.
-
+[22] [23] (./paper.aux)
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 39F61F69A8AA91DCE8E95DFA089824D7;3102.
+(rerunfilecheck)             Checksum: C7170087FAC4C208177F740033232BAE;3261.
  ) 
 Here is how much of TeX's memory you used:
- 12173 strings out of 480954
- 178256 string characters out of 5906449
- 504103 words of memory out of 5000000
- 28972 multiletter control sequences out of 15000+600000
+ 12183 strings out of 480954
+ 178382 string characters out of 5906449
+ 504274 words of memory out of 5000000
+ 28974 multiletter control sequences out of 15000+600000
  473509 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,11n,74p,1508b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,11n,74p,1531b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/trista/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/
 Users/trista/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/tr
 ista/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/trista/Li
@@ -842,10 +838,10 @@ inyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/trista/Library/TinyT
 eX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/trista/Library/TinyTeX/t
 exmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/trista/Library/TinyTeX/texmf-
 dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (21 pages, 1186898 bytes).
+Output written on paper.pdf (23 pages, 1200702 bytes).
 PDF statistics:
- 596 PDF objects out of 1000 (max. 8388607)
- 522 compressed objects within 6 object streams
- 154 named destinations out of 1000 (max. 500000)
- 251 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 623 PDF objects out of 1000 (max. 8388607)
+ 547 compressed objects within 6 object streams
+ 162 named destinations out of 1000 (max. 500000)
+ 259 words of extra memory for PDF output out of 10000 (max. 10000000)
 
